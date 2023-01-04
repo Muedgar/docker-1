@@ -13,6 +13,10 @@ async function main() {
 
         server.use( '/', mocks.server( server.Router()) )
 
+        server.use( '/foo', (req, res) => {
+   return res.json({ "foo": "bar" })
+ })
+
     const result = await server.start()
         console.info( result )
     
